@@ -1,0 +1,44 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+    <!-- Head -->
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, maximum-scale=1, shrink-to-fit=no">
+        <title>Messenger - Responsive Bootstrap Application</title>
+
+        <!-- Template core CSS -->
+
+        <link href="{% static 'css/template.min.css' %}" rel="stylesheet">
+        <link href="{% static 'css/template.dark.min.css' %}" rel="stylesheet" media="(prefers-color-scheme: dark)">
+
+
+
+    </head>
+    <!-- Head -->
+
+    <body>
+
+        <div class="layout">
+
+            <div class="container d-flex flex-column">
+                <div class="row align-items-center justify-content-center no-gutters min-vh-100">
+                  {% block content %}
+                  {% endblock %}
+
+                    
+                </div> <!-- / .row -->
+            </div>
+
+        </div><!-- .layout -->
+
+        <!-- Scripts -->
+        <script src="{% static 'js/libs/jquery.min.js' %}"></script>
+        <script src="{% static 'js/bootstrap/bootstrap.bundle.min.js' %}"></script>
+        <script src="{% static 'js/plugins/plugins.bundle.js' %}"></script>
+        <script src="{% static 'js/template.js' %}"></script>
+        <!-- Scripts -->
+
+    </body>
+</html>

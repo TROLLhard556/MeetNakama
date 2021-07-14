@@ -1,0 +1,39 @@
+{% extends "authBase.html" %}
+{% load static %}
+
+{% block title %}
+Sign Up
+{% endblock %}
+
+
+
+{% block content %}
+<div class="col-12 col-md-5 col-lg-4 py-8 py-md-11">
+
+    <!-- Heading -->
+    <h1 class="font-bold text-center">Sign up</h1>
+
+    <!-- Text -->
+    <p class="text-center mb-6">Welcome to the official Chat web-client.</p>
+
+    <!-- Form -->
+    {% load crispy_forms_tags %}
+    <form class="mb-6" method="POST">
+
+        <!-- Name -->
+
+        {% csrf_token %}
+        {{ form|crispy }}
+
+
+        <!-- Submit -->
+        <button class="btn btn-lg btn-block btn-primary" type="submit">Sign up</button>
+    </form>
+
+    <!-- Text -->
+    <p class="text-center">
+        Already have an account? <a href="/login/">Sign in</a>.
+    </p>
+
+</div>
+{% endblock %}
