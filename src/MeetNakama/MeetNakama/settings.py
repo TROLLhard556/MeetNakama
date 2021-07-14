@@ -124,3 +124,8 @@ STATIC_URL = '/static/'
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+# MAILCHIMP CREDENTIALS
+MAILCHIMP_API_KEY = "540d2bd474d5c4eb50342b5ef2dc0418-us6"
+MAILCHIMP_DATA_CENTER = "us6"
+MAILCHIMP_EMAIL_LIST_ID = "84595b88f7"
