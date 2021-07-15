@@ -38,7 +38,7 @@
                             <input type="checkbox" class="custom-control-input" checked="" id="checkbox-remember">
                             <label class="custom-control-label" for="checkbox-remember">Remember me</label>
                         </div>
-                        <a href="./password-reset.html">Reset password</a>
+                        <a href="{% url 'PasswordReset' %}">Reset password</a>
                     </div>
 
                     <!-- Submit -->
@@ -47,7 +47,7 @@
 
                 <!-- Text -->
                 <p class="text-center">
-                    Don't have an account yet <a href="./signup.html">Sign up</a>.
+                    Don't have an account yet <a href="{% url 'Signup' %}">Sign up</a>.
                 </p>
 
             </div>
