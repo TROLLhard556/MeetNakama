@@ -6,6 +6,5 @@ from . import views
 urlpatterns = [
     path('signup/', views.Signup, name='Signup'),
     path('', include('django.contrib.auth.urls')),
-    #path('password-reset/', views.PasswordReset, name='PasswordReset'),
     path('home/', views.Home, name='Home')
 ]

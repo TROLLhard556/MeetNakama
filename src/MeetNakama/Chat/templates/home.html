@@ -6,5 +6,1990 @@
 {% endblock %}
 
 {% block content %}
-<h1>You Logged In</h1>
+<div class="layout">
+
+    <!-- Navbar -->
+    <div class="navigation navbar navbar-light justify-content-center py-xl-7">
+
+        <!-- Brand -->
+        <a href="#" class="d-none d-xl-block mb-6">
+            <img src="assets/images/brand.svg" class="mx-auto fill-primary" data-inject-svg="" alt="" style="height: 46px;">
+        </a>
+
+        <!-- Menu -->
+        <ul class="nav navbar-nav flex-row flex-xl-column flex-grow-1 justify-content-between justify-content-xl-center py-3 py-lg-0" role="tablist">
+
+
+
+            <!-- Invisible item to center nav vertically -->
+            <li class="nav-item d-none d-xl-block invisible flex-xl-grow-1">
+                <a class="nav-link position-relative p-0 py-xl-3" href="#" title="">
+                    <i class="icon-lg fe-x"></i>
+                </a>
+            </li>
+
+            <!-- Create group -->
+            <li class="nav-item invisible">
+                <a class="nav-link position-relative p-0 py-xl-3" href="#" title="">
+                    <i class="icon-lg fe-x"></i>
+                </a>
+            </li>
+
+            <!-- Friend -->
+            <li class="nav-item mt-xl-9">
+                <a class="nav-link position-relative p-0 py-xl-3" data-toggle="tab" href="#tab-content-friends" title="Friends" role="tab">
+                    <i class="icon-lg fe-users"></i>
+                </a>
+            </li>
+
+            <!-- Home -->
+            <li class="nav-item mt-xl-9">
+                <a class="nav-link position-relative p-0 py-xl-3 active" data-toggle="tab" href="#tab-content-home" title="Home" role="tab">
+                    <i class="icon-lg fe-globe"></i>
+                    <div class="badge badge-primary badge-bottom-center"></div>
+                </a>
+            </li>
+
+            <!-- Chats -->
+            <li class="nav-item mt-xl-9">
+                <a class="nav-link position-relative p-0 py-xl-3" data-toggle="tab" href="#tab-content-dialogs" title="Chats" role="tab">
+                    <i class="icon-lg fe-message-square"></i>
+                </a>
+            </li>
+
+            <!-- Profile -->
+            <li class="nav-item mt-xl-9">
+                <a class="nav-link position-relative p-0 py-xl-3" data-toggle="tab" href="#tab-content-user" title="User" role="tab">
+                    <i class="icon-lg fe-user"></i>
+                </a>
+            </li>
+
+            <!-- Invisible item to center nav vertically -->
+            <li class="nav-item d-none d-xl-block invisible flex-xl-grow-1">
+                <a class="nav-link position-relative p-0 py-xl-3" href="#" title="">
+                    <i class="icon-lg fe-x"></i>
+                </a>
+            </li>
+
+            <!-- Settings -->
+            <li class="nav-item invisible mt-xl-9">
+                <a class="nav-link position-relative p-0 py-xl-3" href="#" title="Settings">
+                    <i class="icon-lg fe-x"></i>
+                </a>
+            </li>
+
+
+
+        </ul>
+        <!-- Menu -->
+
+    </div>
+    <!-- Navbar -->
+
+    <!-- Sidebar -->
+    <div class="sidebar">
+      <div class="tab-content h-100" role="tablist">
+          <div class="tab-pane fade h-100" id="tab-content-friends" role="tabpanel">
+              <div class="d-flex flex-column h-100">
+
+                  <div class="hide-scrollbar">
+                      <div class="container-fluid py-6">
+
+                          <!-- Title -->
+                          <h2 class="font-bold mb-6">Friends</h2>
+                          <!-- Title -->
+
+                          <!-- Search -->
+                          <form class="mb-6">
+                              <div class="input-group">
+                                  <input type="text" class="form-control form-control-lg" placeholder="Search for messages or users..." aria-label="Search for messages or users...">
+                                  <div class="input-group-append">
+                                      <button class="btn btn-lg btn-ico btn-secondary btn-minimal" type="submit">
+                                          <i class="fe-search"></i>
+                                      </button>
+                                  </div>
+                              </div>
+                          </form>
+                          <!-- Search -->
+
+                          <!-- Button -->
+                          <button type="button" class="btn btn-lg btn-block btn-secondary d-flex align-items-center mb-6" data-toggle="modal" data-target="#invite-friends">
+                              Invite friends
+                              <i class="fe-users ml-auto"></i>
+                          </button>
+
+                          <!-- Friends -->
+                          <nav class="mb-n6">
+
+                            <!-- Friend -->
+                            <div class="card mb-6">
+                                <div class="card-body">
+
+                                    <div class="media">
+
+                                        <div class="avatar avatar-online mr-5">
+                                            <img class="avatar-img" src="assets/{% static contact.user.image %}" alt="Anna Bridges">
+                                        </div>
+
+                                        <div class="media-body align-self-center">
+                                            <h6 class="mb-0">{{ contact.user.name }}</h6>
+                                            <small class="text-muted">Online</small>
+                                        </div>
+
+                                        <div class="align-self-center ml-5">
+                                            <div class="dropdown z-index-max">
+                                                <a href="#" class="btn btn-sm btn-ico btn-link text-muted w-auto" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                    <i class="fe-more-vertical"></i>
+                                                </a>
+                                                <div class="dropdown-menu">
+                                                    <a class="dropdown-item d-flex align-items-center" href="#">
+                                                        New chat <span class="ml-auto fe-edit-2"></span>
+                                                    </a>
+                                                    <a class="dropdown-item d-flex align-items-center" href="#">
+                                                        Delete <span class="ml-auto fe-trash-2"></span>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Link -->
+                                    <a href="/chat/{{ contact.user }}" class="stretched-link"></a>
+
+                                </div>
+                            </div>
+                            <!-- Friend -->
+                          </nav>
+                          <!-- Friends -->
+
+                      </div>
+                  </div>
+
+              </div>
+          </div>
+
+          <div class="tab-pane fade h-100 show active" id="tab-content-home" role="tabpanel">
+              <div class="d-flex flex-column h-100">
+
+                  <div class="hide-scrollbar">
+                      <div class="container-fluid py-6">
+
+                          <!-- Title -->
+                          <h2 class="font-bold mb-6">Start chat</h2>
+                          <!-- Title -->
+
+                          <!-- Tabs -->
+                          <ul class="nav nav-tabs nav-justified mb-6" role="tablist">
+                            <li class="nav-item">
+                                <a href="#start-chat-group" class="nav-link" data-toggle="tab" role="tab" aria-selected="false">Group</a>
+                            </li>
+                          </ul>
+                          <!-- Tabs -->
+
+                          <!-- start chat -->
+                          <div class="tab-content" role="tablist">
+
+                              <!-- Chat single -->
+                              <div id="start-chat-group" class="tab-pane fade show active" role="tabpanel">
+                                <div class="form-group">
+                                  <label class="small">Subjects</label>
+                                  <input class="btn btn-lg btn-secondary btn-block" type="button" id="room-music" value="Music">
+                                  <br>
+                                  <input class="btn btn-lg btn-secondary btn-block" type="button" id="room-games" value="Games">
+                                  <br>
+                                  <input class="btn btn-lg btn-secondary btn-block" type="button" id="room-movies" value="Movies">
+                                  <br>
+                                  <input class="btn btn-lg btn-secondary btn-block" type="button" id="room-sports" value="Sports">
+                                  <br>
+                                  <input class="btn btn-lg btn-primary btn-block" type="button" id="" value="Start Chat" data-toggle="modal" data-target="#how-works">
+                                </div>
+                              </div>
+                              <!-- Chat single -->
+
+
+
+                              <!-- Chat group -->
+
+                              <!-- Chat group -->
+
+                          </div>
+                          <!-- Create chat -->
+
+                      </div>
+                  </div>
+
+
+
+              </div>
+          </div>
+
+          <div class="tab-pane fade h-100" id="tab-content-dialogs" role="tabpanel">
+              <div class="d-flex flex-column h-100">
+
+                  <div class="hide-scrollbar">
+                      <div class="container-fluid py-6">
+
+                          <!-- Title -->
+                          <h2 class="font-bold mb-6">Chats</h2>
+                          <!-- Title -->
+
+                          <!-- Search -->
+                          <form class="mb-6">
+                              <div class="input-group">
+                                  <input type="text" class="form-control form-control-lg" placeholder="Search for messages or users..." aria-label="Search for messages or users...">
+                                  <div class="input-group-append">
+                                      <button class="btn btn-lg btn-ico btn-secondary btn-minimal" type="submit">
+                                          <i class="fe-search"></i>
+                                      </button>
+                                  </div>
+                              </div>
+                          </form>
+                          <!-- Search -->
+
+                          <!-- Favourites -->
+                          <div class="text-center hide-scrollbar d-flex my-7" data-horizontal-scroll="">
+                              <a href="#" class="d-block text-reset mr-7 mr-lg-6">
+                                  <div class="avatar avatar-sm avatar-online mb-3">
+                                      <img class="avatar-img" src="assets/images/avatars/undraw_profile_1.svg" alt="Image Description">
+                                  </div>
+                                  <div class="small">Anna</div>
+                              </a>
+
+                              <a href="#" class="d-block text-reset mr-7 mr-lg-6">
+                                  <div class="avatar avatar-sm avatar-online mb-3">
+                                      <img class="avatar-img" src="assets/images/avatars/undraw_profile_2.svg" alt="Image Description">
+                                  </div>
+                                  <div class="small">Brian</div>
+                              </a>
+                          </div>
+                          <!-- Favourites -->
+
+                          <!-- Chats -->
+                          <nav class="nav d-block list-discussions-js mb-n6">
+                            <!-- Chat link -->
+                            <a class="text-reset nav-link p-0 mb-6" href="/chat/{{ chat.id }}/">
+                                <div class="card card-active-listener">
+                                    <div class="card-body">
+
+                                        <div class="media">
+
+
+                                            <div class="avatar mr-5">
+                                                <img class="avatar-img" src="assets/images/avatars/undraw_profile_2.svg" alt="Brian Dawson">
+                                            </div>
+
+                                            <div class="media-body overflow-hidden">
+                                                <div class="d-flex align-items-center mb-1">
+                                                    <h6 class="text-truncate mb-0 mr-auto">{{ chat.id }}</h6>
+                                                    <p class="small text-muted text-nowrap ml-4">10:42 am</p>
+                                                </div>
+                                                <div class="text-truncate">Brian Dawson: Hey, Maher! How are you? The weather is great isn't it?</div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+
+
+                                    <div class="badge badge-circle badge-primary badge-border-light badge-top-right">
+                                        <span>3</span>
+                                    </div>
+
+                                </div>
+                            </a>
+                            <!-- Chat link -->
+                          </nav>
+                          <!-- Chats -->
+
+                      </div>
+                  </div>
+
+              </div>
+          </div>
+
+          <div class="tab-pane fade h-100" id="tab-content-user" role="tabpanel">
+              <div class="d-flex flex-column h-100">
+
+                  <div class="hide-scrollbar">
+                      <div class="container-fluid py-6">
+
+                          <!-- Title -->
+                          <h2 class="font-bold mb-6">Profile</h2>
+                          <!-- Title -->
+
+
+                          <!-- Card -->
+                          <div class="card mb-6">
+                              <div class="card-body">
+                                  <div class="text-center py-6">
+                                      <!-- Photo -->
+                                      <div class="avatar avatar-xl mb-5">
+                                          <img class="avatar-img" src="assets/{% static user.image %}" alt="">
+                                      </div>
+
+                                      <h5>{{ user.name }}</h5>
+                                      <p class="text-muted mt-5">{{ user.bio }}</p>
+                                  </div>
+                              </div>
+                          </div>
+                          <!-- Card -->
+
+                          <!-- Card -->
+                          <div class="card mb-6">
+                              <div class="card-body">
+                                  <ul class="list-group list-group-flush">
+                                      <li class="list-group-item px-0 py-6">
+                                          <div class="media align-items-center">
+                                              <div class="media-body">
+                                                  <p class="small text-muted mb-0">Location</p>
+                                                  <p>{{ user.location }}</p>
+                                              </div>
+                                              <i class="text-muted icon-sm fe-globe"></i>
+                                          </div>
+                                      </li>
+
+                                      <li class="list-group-item px-0 py-6">
+                                          <div class="media align-items-center">
+                                              <div class="media-body">
+                                                  <p class="small text-muted mb-0">Phone</p>
+                                                  <p>{{ user.phone }}</p>
+                                              </div>
+                                              <i class="text-muted icon-sm fe-smartphone"></i>
+                                          </div>
+                                      </li>
+
+                                      <li class="list-group-item px-0 py-6">
+                                          <div class="media align-items-center">
+                                              <div class="media-body">
+                                                  <p class="small text-muted mb-0">Email</p>
+                                                  <p>{{ user.email }}</p>
+                                              </div>
+                                              <i class="text-muted icon-sm fe-mail"></i>
+                                          </div>
+                                      </li>
+                                  </ul>
+                              </div>
+                          </div>
+                          <!-- Card -->
+
+                          <!-- Card -->
+                          <div class="card mb-6">
+                              <div class="card-header">
+                                  <p class="small text-muted mb-0">Traits</p>
+                              </div>
+                              <div class="card-body">
+                                <h4 class="small font-weight-bold">Funny <span
+                                        class="float-right">20%</span></h4>
+                                <div class="progress mb-4">
+                                    <div class="progress-bar bg-danger" role="progressbar" style="width: 20%"
+                                        aria-valuenow="20" aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+                                <h4 class="small font-weight-bold">Smart <span
+                                        class="float-right">40%</span></h4>
+                                <div class="progress mb-4">
+                                    <div class="progress-bar bg-warning" role="progressbar" style="width: 40%"
+                                        aria-valuenow="40" aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+                                <h4 class="small font-weight-bold">Kind <span
+                                        class="float-right">60%</span></h4>
+                                <div class="progress mb-4">
+                                    <div class="progress-bar" role="progressbar" style="width: 60%"
+                                        aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+                                <h4 class="small font-weight-bold">Mean <span
+                                        class="float-right">80%</span></h4>
+                                <div class="progress mb-4">
+                                    <div class="progress-bar bg-info" role="progressbar" style="width: 80%"
+                                        aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+                                <h4 class="small font-weight-bold">Boring <span
+                                        class="float-right">Complete!</span></h4>
+                                <div class="progress">
+                                    <div class="progress-bar bg-success" role="progressbar" style="width: 100%"
+                                        aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+                              </div>
+                          </div>
+                          <!-- Card -->
+
+                          <div class="form-row">
+                              <div class="col">
+                                  <!-- Button -->
+                                  <button onclick="ShowSettings()" id="settingsButton" class="btn btn-lg btn-block btn-basic d-flex align-items-center" type="button" name="settingsButton">
+                                    Settings
+                                    <span class="fe-settings ml-auto"></span>
+                                  </button>
+                              </div>
+
+                              <div class="col">
+                                  <!-- Button -->
+                                  <a href="/logout/" class="btn btn-lg btn-block btn-basic d-flex align-items-center">
+                                    Logout
+                                    <span class="fe-settings ml-auto"></span>
+                                  </a>
+                              </div>
+                          </div>
+
+                      </div>
+                  </div>
+
+              </div>
+
+
+
+
+          </div>
+      </div>
+    </div>
+    <!-- Sidebar -->
+
+    <!-- Main Content -->
+
+    <div id="homeView" class="main" data-mobile-height="">
+      <!-- Default Page -->
+      <div class="chat flex-column justify-content-center text-center">
+          <div class="container-xxl">
+
+              <div class="avatar avatar-lg mb-5">
+                  <img class="avatar-img" src="assets/{% static user.image %}" alt="">
+              </div>
+
+              <h6>Hey, {{ user.name }}!</h6>
+              <p>Please select a chat to start messaging.</p>
+          </div>
+      </div>
+    </div>
+
+    <div id="settingsView" class="main d-none" data-mobile-height="">
+      <!-- Chat -->
+      <div class="chat">
+
+          <!-- Chat: body -->
+          <div class="chat-body">
+
+              <!-- Chat: Header -->
+              <div class="chat-header border-bottom py-4 py-lg-6 px-lg-8">
+                  <div class="container-xxl">
+
+                      <div class="row align-items-center">
+
+                          <!-- Close chat(mobile) -->
+                          <div class="col-3 d-xl-none">
+                              <ul class="list-inline mb-0">
+                                  <li class="list-inline-item">
+                                      <a class="text-muted px-0" href="#" data-chat="open">
+                                          <i class="icon-md fe-chevron-left"></i>
+                                      </a>
+                                  </li>
+                              </ul>
+                          </div>
+
+                          <!-- Chat photo -->
+                          <div class="col-6 col-xl-6">
+                              <div class="media text-center text-xl-left">
+                                  <div class="media-body align-self-center text-truncate">
+                                      <h6 class="text-truncate mb-n1">Settings</h6>
+                                      <small class="text-muted">Update your profile details</small>
+                                  </div>
+                              </div>
+                          </div>
+
+                      </div><!-- .row -->
+
+                  </div>
+              </div>
+              <!-- Chat: Header -->
+
+              <!-- Chat: Content-->
+              <div class="chat-content px-lg-8">
+                  <div class="container-xxl py-6 py-lg-10">
+
+                      <!-- Accordion -->
+                      <div class="accordion modified-accordion mb-n6 mb-lg-8" id="profile-settings">
+                          <div class="card-columns">
+
+                              <!-- Card -->
+                              <div class="card mb-6 mb-lg-8">
+                                  <div class="card-header position-relative">
+                                      <a href="#" class="text-reset d-block stretched-link collapsed" data-toggle="collapse" data-target="#profile-settings-account" aria-controls="profile-settings-account" aria-expanded="true">
+                                          <div class="row no-gutters align-items-center">
+                                              <!-- Title -->
+                                              <div class="col">
+                                                  <h5>Account</h5>
+                                                  <p>Update your profile details.</p>
+                                              </div>
+
+                                              <!-- Icon -->
+                                              <div class="col-auto">
+                                                  <i class="text-muted icon-md fe-user"></i>
+                                              </div>
+                                          </div>
+                                      </a>
+                                  </div>
+
+                                  <div id="profile-settings-account" class="collapse" data-parent="#profile-settings">
+                                      <div class="card-body">
+                                          <form action="#">
+                                              <div class="form-group">
+                                                  <label class="small">Avatar</label>
+                                                  <div class="position-relative text-center bg-secondary rounded p-6">
+                                                      <div class="avatar bg-primary text-white mb-5">
+                                                          <i class="icon-md fe-image"></i>
+                                                      </div>
+
+                                                      <p class="small text-muted mb-0">You can upload jpg, gif or png files. <br> Max file size 3mb.</p>
+                                                      <input id="upload-user-photo" class="d-none" type="file">
+                                                      <label class="stretched-label mb-0" for="upload-user-photo"></label>
+                                                  </div>
+                                              </div>
+
+                                              <div class="form-group">
+                                                  <label class="small" for="profile-name">Name</label>
+                                                  <input class="form-control form-control-lg" name="profile-name" id="profile-name" type="text" placeholder="{{ user.name }}">
+                                              </div>
+
+                                              <div class="form-group">
+                                                  <label class="small" for="profile-phone">Phone</label>
+                                                  <input class="form-control form-control-lg" name="profile-phone" id="profile-phone" type="text" placeholder="{{ user.phone }}"></input>
+                                              </div>
+
+                                              <div class="form-group">
+                                                  <label class="small" for="profile-email">Email</label>
+                                                  <input class="form-control form-control-lg" name="profile-email" id="profile-email" type="email" placeholder="{{ user.email }}">
+                                              </div>
+
+                                              <div class="form-group">
+                                                  <label class="small" for="profile-about">Bio</label>
+                                                  <textarea class="form-control form-control-lg" id="profile-about" rows="3" placeholder="Express yourself" data-autosize="true">{{ user.bio }}</textarea>
+                                              </div>
+
+                                              <button class="btn btn-lg btn-primary btn-block" type="submit">Save Preferences</button>
+                                          </form>
+                                      </div>
+                                  </div><!-- .collapse -->
+
+                              </div>
+                              <!-- Card -->
+
+                              <!-- Card -->
+                              <div class="card mb-6 mb-lg-8">
+                                  <div class="card-header position-relative">
+                                      <a href="#" class="text-reset d-block stretched-link collapsed" data-toggle="collapse" data-target="#profile-settings-notifications" aria-controls="profile-settings-notifications" aria-expanded="true">
+                                          <div class="row no-gutters align-items-center">
+                                              <!-- Title -->
+                                              <div class="col">
+                                                  <h5>Notifications</h5>
+                                                  <p>Update your profile details.</p>
+                                              </div>
+
+                                              <!-- Icon -->
+                                              <div class="col-auto">
+                                                  <i class="text-muted icon-md fe-bell"></i>
+                                              </div>
+                                          </div>
+                                      </a>
+                                  </div>
+
+                                  <div id="profile-settings-notifications" class="collapse" data-parent="#profile-settings">
+                                      <div class="card-body">
+                                          <ul class="list-group list-group-flush">
+                                              <li class="list-group-item pt-0 px-0">
+                                                  <div class="d-flex align-items-center justify-content-between mb-2">
+                                                      <!-- Title -->
+                                                      <h6 class="mb-0">Sound</h6>
+
+                                                      <!-- Switch -->
+                                                      <div class="custom-control custom-switch">
+                                                          <input type="checkbox" class="custom-control-input" id="custom-switch-1">
+                                                          <label class="custom-control-label" for="custom-switch-1"></label>
+                                                      </div>
+                                                  </div>
+                                                  <p>Update your profile details.</p>
+                                              </li>
+
+                                              <li class="list-group-item px-0">
+                                                  <div class="d-flex justify-content-between mb-2">
+                                                      <!-- Title -->
+                                                      <h6 class="mb-0">Exceptions</h6>
+
+                                                      <!-- Switch -->
+                                                      <div class="custom-control custom-switch">
+                                                          <input type="checkbox" class="custom-control-input" id="custom-switch-2">
+                                                          <label class="custom-control-label" for="custom-switch-2"></label>
+                                                      </div>
+                                                  </div>
+                                                  <p>Update your profile details.</p>
+                                              </li>
+
+                                              <li class="list-group-item px-0">
+                                                  <div class="d-flex justify-content-between mb-2">
+                                                      <!-- Title -->
+                                                      <h6 class="mb-0">Message preview</h6>
+
+                                                      <!-- Switch -->
+                                                      <div class="custom-control custom-switch">
+                                                          <input type="checkbox" class="custom-control-input" id="custom-switch-3">
+                                                          <label class="custom-control-label" for="custom-switch-3"></label>
+                                                      </div>
+                                                  </div>
+                                                  <p>Update your profile details.</p>
+                                              </li>
+
+                                              <li class="list-group-item pb-0 px-0">
+                                                  <div class="d-flex justify-content-between mb-2">
+                                                      <!-- Title -->
+                                                      <h6 class="mb-0">Show notifications</h6>
+
+                                                      <!-- Switch -->
+                                                      <div class="custom-control custom-switch">
+                                                          <input type="checkbox" class="custom-control-input" id="custom-switch-4">
+                                                          <label class="custom-control-label" for="custom-switch-4"></label>
+                                                      </div>
+                                                  </div>
+                                                  <p>Update your profile details.</p>
+                                              </li>
+                                          </ul>
+                                      </div>
+                                  </div><!-- .collapse -->
+
+                              </div>
+                              <!-- Card -->
+
+                              <!-- Card -->
+                              <div class="card mb-6 mb-lg-8">
+                                  <div class="card-header position-relative">
+                                      <a href="#" class="text-reset d-block stretched-link collapsed" data-toggle="collapse" data-target="#profile-settings-security" aria-expanded="true" aria-controls="profile-settings-security">
+                                          <div class="row no-gutters align-items-center">
+                                              <!-- Title -->
+                                              <div class="col">
+                                                  <h5>Security</h5>
+                                                  <p>Update your profile details.</p>
+                                              </div>
+
+                                              <!-- Icon -->
+                                              <div class="col-auto">
+                                                  <i class="text-muted icon-md fe-shield"></i>
+                                              </div>
+                                          </div>
+                                      </a>
+                                  </div>
+
+                                  <div id="profile-settings-security" class="collapse" data-parent="#profile-settings">
+                                      <div class="card-body">
+                                          <form action="#">
+                                              <div class="form-group">
+                                                  <label class="small" for="current-password">Current password</label>
+                                                  <input name="current-password" id="current-password" type="password" class="form-control form-control-lg" placeholder="Current password">
+                                              </div>
+
+                                              <div class="form-group">
+                                                  <label class="small" for="new-password">New password</label>
+                                                  <input name="new-password" id="new-password" type="password" class="form-control form-control-lg" placeholder="New password">
+                                              </div>
+
+                                              <div class="form-group">
+                                                  <label class="small" for="verify-password">Verify password</label>
+                                                  <input name="verify-password" id="verify-password" type="password" class="form-control form-control-lg" placeholder="Verify password">
+                                              </div>
+
+                                              <button class="btn btn-lg btn-primary btn-block" type="submit">
+                                                  Change Password
+                                              </button>
+                                          </form>
+                                      </div>
+                                  </div><!-- .collapse -->
+
+                              </div>
+                              <!-- Card -->
+
+                              <!-- Card -->
+                              <div class="card mb-6 mb-lg-8">
+                                  <div class="card-header position-relative">
+                                      <a href="#" class="text-reset d-block stretched-link collapsed" data-toggle="collapse" data-target="#profile-settings-social" aria-controls="profile-settings-social" aria-expanded="true">
+                                          <div class="row no-gutters align-items-center">
+                                              <!-- Title -->
+                                              <div class="col">
+                                                  <h5>Social</h5>
+                                                  <p>Update your profile details.</p>
+                                              </div>
+
+                                              <!-- Icon -->
+                                              <div class="col-auto">
+                                                  <i class="text-muted icon-md fe-share-2"></i>
+                                              </div>
+                                          </div>
+                                      </a>
+                                  </div>
+
+                                  <div id="profile-settings-social" class="collapse" data-parent="#profile-settings">
+                                      <div class="card-body">
+
+                                          <form action="#">
+                                              <!-- Twitter -->
+                                              <div class="form-group">
+                                                  <label class="small" for="profile-twitter">Twitter</label>
+                                                  <div class="input-group">
+                                                      <div class="input-group-prepend">
+                                                          <div class="btn btn-ico btn-secondary btn-minimal">
+                                                              <i class="fe-twitter"></i>
+                                                          </div>
+                                                      </div>
+                                                      <input id="profile-twitter" type="text" class="form-control form-control-lg" placeholder="Username" aria-label="Username">
+                                                  </div>
+                                              </div>
+
+                                              <!-- Facebook -->
+                                              <div class="form-group">
+                                                  <label class="small" for="profile-facebook">Facebook</label>
+                                                  <div class="input-group">
+                                                      <div class="input-group-prepend">
+                                                          <div class="btn btn-ico btn-secondary btn-minimal">
+                                                              <i class="fe-facebook"></i>
+                                                          </div>
+                                                      </div>
+                                                      <input id="profile-facebook" type="text" class="form-control form-control-lg" placeholder="Username" aria-label="Username">
+                                                  </div>
+                                              </div>
+
+                                              <!-- Instagram -->
+                                              <div class="form-group">
+                                                  <label class="small" for="profile-instagram">Instagram</label>
+                                                  <div class="input-group">
+                                                      <div class="input-group-prepend">
+                                                          <div class="btn btn-ico btn-secondary btn-minimal">
+                                                              <i class="fe-instagram"></i>
+                                                          </div>
+                                                      </div>
+                                                      <input id="profile-instagram" type="text" class="form-control form-control-lg" placeholder="Username" aria-label="Username">
+                                                  </div>
+                                              </div>
+
+
+
+                                              <button class="btn btn-lg btn-primary btn-block" type="submit">Save Preferences</button>
+                                          </form>
+                                      </div>
+                                  </div><!-- .collapse -->
+
+                              </div>
+                              <!-- Card -->
+
+                          </div>
+                      </div>
+                      <!-- Accordion -->
+
+                  </div>
+              </div>
+              <!-- Chat: Content -->
+
+          </div>
+          <!-- Chat: body -->
+
+      </div>
+      <!-- Chat -->
+    </div>
+
+    <div id="chatView" class="main d-none" data-mobile-height="">
+      <!-- Chat -->
+      <div id="chat-1" class="chat dropzone-form-js" data-dz-url="some.php">
+
+          <!-- Chat: body -->
+          <div class="chat-body">
+
+              <!-- Chat: Header -->
+              <div class="chat-header border-bottom py-4 py-lg-6 px-lg-8">
+                  <div class="container-xxl">
+
+                      <div class="row align-items-center">
+
+                          <!-- Close chat(mobile) -->
+                          <div class="col-3 d-xl-none">
+                              <ul class="list-inline mb-0">
+                                  <li class="list-inline-item">
+                                      <a class="text-muted px-0" href="#" data-chat="open">
+                                          <i class="icon-md fe-chevron-left"></i>
+                                      </a>
+                                  </li>
+                              </ul>
+                          </div>
+
+                          <!-- Chat photo -->
+                          <div class="col-6 col-xl-6">
+                              <div class="media text-center text-xl-left">
+                                  <div class="avatar avatar-sm d-none d-xl-inline-block mr-5">
+                                      <img src="assets/images/brand.svg" class="avatar-img" alt="">
+                                  </div>
+
+                                  <div class="media-body align-self-center text-truncate">
+                                      <h6 class="text-truncate mb-n1">Bootstrap Themes</h6>
+                                      <small class="text-muted">35 members</small>
+                                      <small class="text-muted mx-2"> • </small>
+                                      <small class="text-muted">HTML, CSS, and Javascript Help</small>
+                                  </div>
+                              </div>
+                          </div>
+
+                          <!-- Chat toolbar -->
+                          <div class="col-3 col-xl-6 text-right">
+                              <ul class="nav justify-content-end">
+                                  <li class="nav-item list-inline-item d-none d-xl-block mr-5">
+                                      <a class="nav-link text-muted px-3" data-toggle="collapse" data-target="#chat-1-search" href="#" title="Search this chat">
+                                          <i class="icon-md fe-search"></i>
+                                      </a>
+                                  </li>
+
+                                  <li class="nav-item list-inline-item d-none d-xl-block mr-3">
+                                      <a class="nav-link text-muted px-3" href="#" data-chat-sidebar-toggle="#chat-1-members" title="Add People">
+                                          <i class="icon-md fe-user-plus"></i>
+                                      </a>
+                                  </li>
+
+                                  <li class="nav-item list-inline-item d-none d-xl-block mr-0">
+                                      <a class="nav-link text-muted px-3" href="#" data-chat-sidebar-toggle="#chat-1-info" title="Details">
+                                          <i class="icon-md fe-more-vertical"></i>
+                                      </a>
+                                  </li>
+
+                                  <!-- Mobile nav -->
+                                  <li class="nav-item list-inline-item d-block d-xl-none">
+                                      <div class="dropdown">
+                                          <a class="nav-link text-muted px-0" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                              <i class="icon-md fe-more-vertical"></i>
+                                          </a>
+                                          <div class="dropdown-menu">
+                                              <a class="dropdown-item d-flex align-items-center" data-toggle="collapse" data-target="#chat-1-search" href="#">
+                                                  Search <span class="ml-auto pl-5 fe-search"></span>
+                                              </a>
+
+                                              <a class="dropdown-item d-flex align-items-center" href="#" data-chat-sidebar-toggle="#chat-1-info">
+                                                  Chat Info <span class="ml-auto pl-5 fe-more-horizontal"></span>
+                                              </a>
+
+                                              <a class="dropdown-item d-flex align-items-center" href="#" data-chat-sidebar-toggle="#chat-1-members">
+                                                  Add Members <span class="ml-auto pl-5 fe-user-plus"></span>
+                                              </a>
+                                          </div>
+                                      </div>
+                                  </li>
+                                  <!-- Mobile nav -->
+                              </ul>
+                          </div>
+
+                      </div><!-- .row -->
+
+                  </div>
+              </div>
+              <!-- Chat: Header -->
+
+              <!-- Chat: Search -->
+              <div class="collapse border-bottom px-lg-8" id="chat-1-search">
+                  <div class="container-xxl py-4 py-lg-6">
+
+                      <div class="input-group">
+                          <input type="text" class="form-control form-control-lg" placeholder="Search this chat" aria-label="Search this chat">
+
+                          <div class="input-group-append">
+                              <button class="btn btn-lg btn-ico btn-secondary btn-minimal" type="submit">
+                                  <i class="fe-search"></i>
+                              </button>
+                          </div>
+                      </div>
+
+                  </div>
+              </div>
+              <!-- Chat: Search -->
+
+              <!-- Chat: Content-->
+              <div class="chat-content px-lg-8">
+                  <div id="chat-log" class="container-xxl py-6 py-lg-10">
+
+
+
+                  </div>
+
+                  <!-- Scroll to end -->
+                  <div class="end-of-chat"></div>
+              </div>
+              <!-- Chat: Content -->
+
+              <!-- Chat: Footer -->
+              <div class="chat-footer border-top py-4 py-lg-6 px-lg-8">
+                  <div class="container-xxl">
+
+                        <div class="form-row align-items-center">
+                            <div class="col">
+                                <div class="input-group">
+
+                                    <!-- Textarea -->
+                                    <textarea id="chat-input" class="form-control bg-transparent border-0" placeholder="Type your message..." rows="1" data-emoji-input="" data-autosize="true"></textarea>
+
+                                    <!-- Emoji button -->
+                                    <div class="input-group-append">
+                                        <button class="btn btn-ico btn-secondary btn-minimal bg-transparent border-0" type="button" data-emoji-btn="">
+                                            <img src="assets/images/smile.svg" data-inject-svg="" alt="">
+                                        </button>
+                                    </div>
+
+                                    <!-- Upload button -->
+                                    <div class="input-group-append">
+                                        <button id="chat-upload-btn-1" class="btn btn-ico btn-secondary btn-minimal bg-transparent border-0 dropzone-button-js" type="button">
+                                            <img src="assets/images/paperclip.svg" data-inject-svg="" alt="">
+                                        </button>
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                            <!-- Submit button -->
+                            <div class="col-auto">
+                                <button class="btn btn-ico btn-primary rounded-circle" type="submit" id="chat-send">
+                                    <span class="fe-send"></span>
+                                </button>
+                            </div>
+
+                        </div>
+                        <script src="assets/js/plugins/reconnecting-websocket.js"></script>
+                        <script>
+                          var chatID = {{ chats.objects }};
+                          var username = {{ username }};
+
+
+
+                          var chatSocket = new ReconnectingWebSocket(
+                            'ws://' + window.location.host + '/ws/chat/' + chatID + '/'
+                          );
+
+                          chatSocket.onopen = function(e) {
+
+                          }
+
+                          chatSocket.onmessage = function(e) {
+                            var data = JSON.parse(e.data);
+                            if (data['command'] === 'messages') {
+                              for (let i=0; i<data['messages'].length; i++) {
+                                createMessage(data['messages'][i]);
+                              }
+                            } else if (data['command'] === 'new_message') {
+                              createMessage(data['message']);
+                            }
+                          };
+
+
+                          chatSocket.onclose = function(e) {
+                            console.error('Chat socket closed unexpectedly');
+                          };
+
+                          document.querySelector('#chat-input').focus();
+                          document.querySelector('#chat-input').onkeyup = function(e) {
+                            if (e.keyCode === 13) {
+                              document.querySelector('#chat-send').click();
+                            }
+                          };
+
+                          document.querySelector('#chat-send').onclick = function(e) {
+                            const messageInputDom = document.querySelector('#chat-input');
+                            const message = messageInputDom.value;
+                            chatSocket.send(JSON.stringify({'command': 'new_message', 'message': message, 'from': username}));
+                            messageInputDom.value = '';
+                          };
+
+                          function fetchMessages() {
+                            chatSocket.send(JSON.stringify({'command': 'fetch_messages'}));
+                          }
+
+                          function showChatUser() {
+                            var chatUser = document.getElementById('chat-user-profile');
+                            if (chatUser.style.visibility === "hidden") {
+                              chatUser.style.visibility = "visible";
+                            } else {
+                              //chatUser.style.visibility = "hidden";
+                            }
+                          }
+
+                          function editTimestamp(timestamp) {
+                            let pre = '';
+                            const diff = Math.round((new Date().getTime() - new Date(timestamp).getTime())/60000);
+                            if (diff < 1) {
+                              pre = 'now';
+                            } else if (diff < 60 && diff > 1) {
+                              if (diff === 1){
+                                pre = diff + ' minute ago';
+                              } else {
+                                pre = diff + ' minutes ago';
+                              }
+                            } else if (diff <24*60 && diff >60) {
+                              if (diff === 60) {
+                                pre = Math.round(diff/60) + ' hour ago';
+                              } else {
+                                pre = Math.round(diff/60) + ' hours ago';
+                              }
+                            } else if (diff <31*24*60 && diff > 24*60) {
+                              if (diff === 24*60) {
+                                pre = Math.round(diff/(60*24)) + ' day ago';
+                              } else {
+                                pre = Math.round(diff/(60*24)) + ' days ago';
+                              }
+                            } else {
+                              pre = new Date().getDay(timestamp);
+                            }
+                            return pre;
+                          }
+
+                          function createMessage(data) {
+                            //var chatUser = document.getElementById('chat-1-user-profile');
+                            //var chatProfile = chatUser.cloneNode(true);
+
+                            //console.log(chatUser.style);
+
+
+
+                            var author = data['author'];
+
+                            var msgDivTag = document.createElement('div');
+                            var flexDiv = document.createElement('div');
+                            var avatarTag = document.createElement('a');
+
+                            //var chatUserScript = document.createElement('script');
+                            //chatUserScript.innerHTML = "function showChatUser() {
+                            //
+                          //  }
+                          //  }"
+
+
+
+
+                            var avatarImg = document.createElement('img');
+                            avatarImg.className = 'avatar-img';
+                            avatarImg.src = 'images/avatars/undraw_profile_2.svg';
+
+                            var msgBodyDiv = document.createElement('div');
+                            msgBodyDiv.className = 'message-body';
+
+                            var msgRowDiv = document.createElement('div');
+                            msgRowDiv.className = 'message-row';
+
+
+
+                            var msgContentDiv = document.createElement('div');
+
+                            var msgTextDiv = document.createElement('div');
+                            msgTextDiv.textContent = data.content;
+
+                            var tsDiv = document.createElement('div');
+                            tsDiv.className = 'mt-1';
+
+                            var timestamp = document.createElement('small');
+                            timestamp.className = 'opacity-65';
+                            timestamp.textContent = this.editTimestamp(data.timestamp);
+
+                            //var msgDrop = document.getElementById('message-dropdown');
+                            //var dropdownClone = msgDrop.cloneNode(true);
+                            //console.log(msgDrop);
+
+
+                            if (author === username) {
+                              msgDivTag.className = 'message message-right';
+                              flexDiv.className = 'd-flex align-items-center justify-content-end';
+                              msgContentDiv.className = 'message-content bg-primary text-white';
+
+                              avatarTag.className ='avatar avatar-sm ml-4 ml-lg-5 d-none d-lg-block';
+
+                            } else {
+                              msgDivTag.className = 'message';
+                              flexDiv.className = 'd-flex align-items-center';
+                              avatarTag.className ='avatar avatar-sm mr-4 mr-lg-5';
+                              avatarTag.href = '#';
+
+                              avatarTag.setAttribute('data-chat-sidebar-toggle', '#chat-1-user-profile');
+                              msgContentDiv.className = 'message-content bg-light';
+
+                              var msgAuthorHeading = document.createElement('h6');
+                              msgAuthorHeading.className = 'mb-2';
+                              msgAuthorHeading.textContent = data.author;
+                              msgContentDiv.appendChild(msgAuthorHeading);
+                              avatarTag.onclick = function(){var chatUser = document.getElementById('chat-1-user-profile');chatUser.className='chat-sidebar chat-sidebar-visible';}
+                              //msgContentDiv.insertAdjacentElement("afterend", msgDrop);
+
+                            }
+
+
+                            msgDivTag.appendChild(avatarTag);
+                            avatarTag.appendChild(avatarImg);
+                            //avatarTag.insertAdjacentElement("afterend", chatProfile);
+
+                            msgDivTag.appendChild(msgBodyDiv);
+                            msgBodyDiv.appendChild(msgRowDiv);
+                            msgRowDiv.appendChild(flexDiv);
+                            flexDiv.appendChild(msgContentDiv);
+
+                            msgContentDiv.appendChild(msgTextDiv);
+                            msgContentDiv.appendChild(tsDiv);
+                            tsDiv.appendChild(timestamp);
+
+                            document.querySelector('#chat-log').appendChild(msgDivTag);
+
+                          }
+                          //var scroll = document.getElementById('chat-log');
+                          //scroll.scrollTop = scroll.scrollHeight - scroll.clientHeight;
+                          //window.scrollTo(0, document.body.scrollHeight || document.getElementById('chat-log').scrollHeight);
+
+                        </script>
+
+                  </div>
+              </div>
+              <!-- Chat: Footer -->
+          </div>
+          <!-- Chat: body -->
+          <!-- Message: dropdown -->
+          <!--
+          <div id="message-dropdown" class="dropdown">
+              <a class="text-muted opacity-60 ml-3" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  <i class="fe-more-vertical"></i>
+              </a>
+
+              <div class="dropdown-menu">
+                  <a class="dropdown-item d-flex align-items-center" href="#">
+                      Edit <span class="ml-auto fe-edit-3"></span>
+                  </a>
+                  <a class="dropdown-item d-flex align-items-center" href="#">
+                      Share <span class="ml-auto fe-share-2"></span>
+                  </a>
+                  <a class="dropdown-item d-flex align-items-center" href="#">
+                      Delete <span class="ml-auto fe-trash-2"></span>
+                  </a>
+              </div>
+          </div>
+         -->
+
+          <!-- Chat Details -->
+          <div id="chat-1-info" class="chat-sidebar">
+              <div class="d-flex h-100 flex-column">
+
+                  <!-- Header -->
+                  <div class="border-bottom py-4 py-lg-6">
+                      <div class="container-fluid">
+
+                          <ul class="nav justify-content-between align-items-center">
+                              <!-- Close sidebar -->
+                              <li class="nav-item list-inline-item">
+                                  <a class="nav-link text-muted px-0" href="#" data-chat-sidebar-close="">
+                                      <i class="icon-md fe-chevron-left"></i>
+                                  </a>
+                              </li>
+
+                              <!-- Title(mobile) -->
+                              <li class="text-center d-block d-lg-none">
+                                  <h6 class="mb-n2">Bootstrap Themes</h6>
+                                  <small class="text-muted">Chat Details</small>
+                              </li>
+
+                              <!-- Dropdown -->
+                              <li class="nav-item list-inline-item">
+                                  <div class="dropdown">
+                                      <a class="nav-link text-muted px-0" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                          <i class="icon-md fe-sliders"></i>
+                                      </a>
+                                      <div class="dropdown-menu">
+                                          <a class="dropdown-item d-flex align-items-center" href="#">
+                                              Mute
+                                              <span class="ml-auto fe-bell"></span>
+                                          </a>
+                                          <a class="dropdown-item d-flex align-items-center" href="#">
+                                              Delete
+                                              <span class="ml-auto fe-trash-2"></span>
+                                          </a>
+                                      </div>
+                                  </div>
+                              </li>
+                          </ul>
+
+                      </div>
+                  </div>
+                  <!-- Header -->
+
+                  <!-- Body -->
+                  <div class="hide-scrollbar flex-fill">
+
+                      <div class="border-bottom text-center py-9 px-10">
+                          <!-- Photo -->
+                          <div class="avatar avatar-xl mx-5 mb-5">
+                              <img class="avatar-img" src="assets/images/brand.svg" alt="">
+                          </div>
+                          <h5>Bootstrap Themes</h5>
+                          <p class="text-muted">Bootstrap is an open source toolkit for developing web with HTML, CSS, and JS.</p>
+                      </div>
+
+                      <!-- Navs -->
+                      <ul class="nav nav-tabs nav-justified bg-light rounded-0" role="tablist">
+                          <li class="nav-item">
+                              <a href="#chat-id-1-members" class="nav-link active" data-toggle="tab" role="tab" aria-selected="true">Members</a>
+                          </li>
+                          <li class="nav-item">
+                              <a href="#chat-id-1-files" class="nav-link" data-toggle="tab" role="tab">Files</a>
+                          </li>
+                      </ul>
+                      <!-- Navs -->
+
+                      <div class="tab-content">
+                          <!-- Members -->
+                          <div id="chat-id-1-members" class="tab-pane fade show active">
+                              <ul class="list-group list-group-flush list-group-no-border-first">
+                                  <!-- Member -->
+                                  <li class="list-group-item py-6">
+                                      <div class="media align-items-center">
+
+
+                                          <div class="avatar avatar-sm avatar-online mr-5">
+                                              <img class="avatar-img" src="assets/images/avatars/undraw_profile_1.svg" alt="Anna Bridges">
+                                          </div>
+
+
+                                          <div class="media-body">
+                                              <h6 class="mb-0">
+                                                  <a href="#" class="text-reset">Anna Bridges</a>
+                                              </h6>
+                                              <small class="text-muted">Online</small>
+                                          </div>
+
+                                          <div class="align-self-center ml-5">
+                                              <div class="dropdown">
+                                                  <a href="#" class="btn btn-sm btn-ico btn-link text-muted w-auto" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                      <i class="fe-more-vertical"></i>
+                                                  </a>
+                                                  <div class="dropdown-menu">
+                                                      <a class="dropdown-item d-flex align-items-center" href="#">
+                                                          Promote <span class="ml-auto fe-trending-up"></span>
+                                                      </a>
+                                                      <a class="dropdown-item d-flex align-items-center" href="#">
+                                                          Restrict <span class="ml-auto fe-trending-down"></span>
+                                                      </a>
+                                                      <a class="dropdown-item d-flex align-items-center" href="#">
+                                                          Delete <span class="ml-auto fe-user-x"></span>
+                                                      </a>
+                                                  </div>
+                                              </div>
+                                          </div>
+
+                                      </div>
+                                  </li>
+                                  <!-- Member -->
+
+                                  <!-- Member -->
+                                  <li class="list-group-item py-6">
+                                      <div class="media align-items-center">
+
+
+
+                                          <div class="avatar avatar-sm mr-5">
+                                              <img class="avatar-img" src="assets/images/avatars/undraw_profile_2.svg" alt="Brian Dawson">
+                                          </div>
+
+                                          <div class="media-body">
+                                              <h6 class="mb-0">
+                                                  <a href="#" class="text-reset">Brian Dawson</a>
+                                              </h6>
+                                              <small class="text-muted">last seen 7 hours ago</small>
+                                          </div>
+
+                                          <div class="align-self-center ml-5">
+                                              <div class="dropdown">
+                                                  <a href="#" class="btn btn-sm btn-ico btn-link text-muted w-auto" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                      <i class="fe-more-vertical"></i>
+                                                  </a>
+                                                  <div class="dropdown-menu">
+                                                      <a class="dropdown-item d-flex align-items-center" href="#">
+                                                          Promote <span class="ml-auto fe-trending-up"></span>
+                                                      </a>
+                                                      <a class="dropdown-item d-flex align-items-center" href="#">
+                                                          Restrict <span class="ml-auto fe-trending-down"></span>
+                                                      </a>
+                                                      <a class="dropdown-item d-flex align-items-center" href="#">
+                                                          Delete <span class="ml-auto fe-user-x"></span>
+                                                      </a>
+                                                  </div>
+                                              </div>
+                                          </div>
+
+                                      </div>
+                                  </li>
+                                  <!-- Member -->
+
+                              </ul>
+                          </div>
+                          <!-- Members -->
+
+                          <!-- Files -->
+                          <div id="chat-id-1-files" class="tab-pane fade">
+                              <ul class="list-group list-group-flush list-group-no-border-first">
+                                  <!-- File -->
+                                  <li class="list-group-item py-6">
+                                      <div class="media">
+
+                                          <div class="icon-shape bg-primary text-white mr-5">
+                                              <i class="fe-paperclip"></i>
+                                          </div>
+
+                                          <div class="media-body align-self-center overflow-hidden">
+                                              <h6 class="text-truncate mb-0">
+                                                  <a href="#" class="text-reset" title="E5419783-047D-4B4C-B30E-F24DD8247731.JPG">E5419783-047D-4B4C-B30E-F24DD8247731.JPG</a>
+                                              </h6>
+
+                                              <ul class="list-inline small mb-0">
+                                                  <li class="list-inline-item">
+                                                      <span class="text-muted">79.2 KB</span>
+                                                  </li>
+                                                  <li class="list-inline-item">
+                                                      <span class="text-muted text-uppercase">txt</span>
+                                                  </li>
+                                              </ul>
+                                          </div>
+
+                                          <div class="align-self-center ml-5">
+                                              <div class="dropdown">
+                                                  <a href="#" class="btn btn-sm btn-ico btn-link text-muted w-auto" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                      <i class="fe-more-vertical"></i>
+                                                  </a>
+                                                  <div class="dropdown-menu">
+                                                      <a class="dropdown-item d-flex align-items-center" href="#">
+                                                          Download <span class="ml-auto fe-download"></span>
+                                                      </a>
+                                                      <a class="dropdown-item d-flex align-items-center" href="#">
+                                                          Share <span class="ml-auto fe-share-2"></span>
+                                                      </a>
+                                                      <a class="dropdown-item d-flex align-items-center" href="#">
+                                                          Delete <span class="ml-auto fe-trash-2"></span>
+                                                      </a>
+                                                  </div>
+                                              </div>
+                                          </div>
+
+                                      </div>
+                                  </li>
+                                  <!-- File -->
+
+
+
+                                  <!-- File -->
+                                  <li class="list-group-item py-6">
+                                      <div class="media">
+
+                                          <div class="icon-shape bg-primary text-white mr-5">
+                                              <i class="fe-paperclip"></i>
+                                          </div>
+
+                                          <div class="media-body align-self-center overflow-hidden">
+                                              <h6 class="text-truncate mb-0">
+                                                  <a href="#" class="text-reset" title="E5419783-047D-4B4C-B30E-F24DD8247731.JPG">E5419783-047D-4B4C-B30E-F24DD8247731.JPG</a>
+                                              </h6>
+
+                                              <ul class="list-inline small mb-0">
+                                                  <li class="list-inline-item">
+                                                      <span class="text-muted">79.2 KB</span>
+                                                  </li>
+                                                  <li class="list-inline-item">
+                                                      <span class="text-muted text-uppercase">pdf</span>
+                                                  </li>
+                                              </ul>
+                                          </div>
+
+                                          <div class="align-self-center ml-5">
+                                              <div class="dropdown">
+                                                  <a href="#" class="btn btn-sm btn-ico btn-link text-muted w-auto" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                      <i class="fe-more-vertical"></i>
+                                                  </a>
+                                                  <div class="dropdown-menu">
+                                                      <a class="dropdown-item d-flex align-items-center" href="#">
+                                                          Download <span class="ml-auto fe-download"></span>
+                                                      </a>
+                                                      <a class="dropdown-item d-flex align-items-center" href="#">
+                                                          Share <span class="ml-auto fe-share-2"></span>
+                                                      </a>
+                                                      <a class="dropdown-item d-flex align-items-center" href="#">
+                                                          Delete <span class="ml-auto fe-trash-2"></span>
+                                                      </a>
+                                                  </div>
+                                              </div>
+                                          </div>
+
+                                      </div>
+                                  </li>
+                                  <!-- File -->
+
+
+
+
+                              </ul>
+                          </div>
+                          <!-- Files -->
+                      </div>
+                  </div>
+                  <!-- Body -->
+
+              </div>
+          </div>
+          <!-- Chat Details -->
+
+          <!-- New members -->
+          <div id="chat-1-members" class="chat-sidebar">
+              <div class="d-flex h-100 flex-column">
+
+                  <!-- Header -->
+                  <div class="border-bottom py-4 py-lg-6">
+                      <div class="container-fluid">
+
+                          <ul class="nav justify-content-between align-items-center">
+                              <!-- Close sidebar -->
+                              <li class="nav-item">
+                                  <a class="nav-link text-muted px-0" href="#" data-chat-sidebar-close="">
+                                      <i class="icon-md fe-chevron-left"></i>
+                                  </a>
+                              </li>
+
+                              <!-- Title(mobile) -->
+                              <li class="text-center d-block d-lg-none">
+                                  <h6 class="mb-n2">Bootstrap Themes</h6>
+                                  <small class="text-muted">Add Members</small>
+                              </li>
+
+                              <!-- Dropdown -->
+                              <li class="nav-item">
+                                  <div class="dropdown">
+                                      <a class="nav-link text-muted px-0" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                          <i class="icon-md fe-sliders"></i>
+                                      </a>
+                                      <div class="dropdown-menu">
+                                          <a class="dropdown-item d-flex align-items-center" href="#">
+                                              Mute
+                                              <span class="ml-auto fe-bell"></span>
+                                          </a>
+                                          <a class="dropdown-item d-flex align-items-center" href="#">
+                                              Delete
+                                              <span class="ml-auto fe-trash-2"></span>
+                                          </a>
+                                      </div>
+                                  </div>
+                              </li>
+                          </ul>
+
+                      </div>
+                  </div>
+                  <!-- Header -->
+
+                  <!-- Body -->
+                  <div class="hide-scrollbar flex-fill">
+                      <!-- Search -->
+                      <div class="border-bottom py-7">
+                          <div class="container-fluid">
+
+                              <form action="#">
+                                  <div class="input-group">
+                                      <input type="text" class="form-control form-control-lg" placeholder="Search for users..." aria-label="Search users...">
+                                      <div class="input-group-append">
+                                          <button class="btn btn-lg btn-ico btn-secondary btn-minimal" type="submit">
+                                              <i class="fe-search"></i>
+                                          </button>
+                                      </div>
+                                  </div>
+                              </form>
+
+                          </div>
+                      </div>
+                      <!-- Search -->
+
+                      <!-- Members -->
+                      <form action="#">
+                          <ul class="list-group list-group-flush">
+                              <li class="list-group-item py-4">
+                                  <small class="text-uppercase">A</small>
+                              </li>
+
+                              <!-- Member -->
+                              <li class="list-group-item py-6">
+                                  <div class="media align-items-center">
+
+
+                                      <div class="avatar avatar-sm avatar-online mr-5">
+                                          <img class="avatar-img" src="assets/images/avatars/undraw_profile_1.svg" alt="Anna Bridges">
+                                      </div>
+
+
+                                      <div class="media-body">
+                                          <h6 class="mb-0">Anna Bridges</h6>
+                                          <small class="text-muted">Online</small>
+                                      </div>
+
+                                      <div class="align-self-center ml-auto">
+                                          <div class="custom-control custom-checkbox">
+                                              <input class="custom-control-input" id="id-add-user-chat-1-user-1" type="checkbox">
+                                              <label class="custom-control-label" for="id-add-user-chat-1-user-1"></label>
+                                          </div>
+                                      </div>
+
+                                  </div>
+
+                                  <!-- Label -->
+                                  <label class="stretched-label" for="id-add-user-chat-1-user-1"></label>
+                              </li>
+                              <!-- Member -->
+
+
+                              <li class="list-group-item py-4">
+                                  <small class="text-uppercase">B</small>
+                              </li>
+
+                              <!-- Member -->
+                              <li class="list-group-item py-6">
+                                  <div class="media align-items-center">
+
+
+
+                                      <div class="avatar avatar-sm mr-5">
+                                          <img class="avatar-img" src="assets/images/avatars/undraw_profile_2.svg" alt="Brian Dawson">
+                                      </div>
+
+                                      <div class="media-body">
+                                          <h6 class="mb-0">Brian Dawson</h6>
+                                          <small class="text-muted">last seen 2 hours ago</small>
+                                      </div>
+
+                                      <div class="align-self-center ml-auto">
+                                          <div class="custom-control custom-checkbox">
+                                              <input class="custom-control-input" id="id-add-user-chat-1-user-2" type="checkbox">
+                                              <label class="custom-control-label" for="id-add-user-chat-1-user-2"></label>
+                                          </div>
+                                      </div>
+
+                                  </div>
+
+                                  <!-- Label -->
+                                  <label class="stretched-label" for="id-add-user-chat-1-user-2"></label>
+                              </li>
+                              <!-- Member -->
+
+
+
+
+                          </ul>
+                      </form>
+                      <!-- Members -->
+                  </div>
+                  <!-- Body -->
+
+                  <!-- Button -->
+                  <div class="border-top py-7">
+                      <div class="container-fluid">
+                          <button class="btn btn-lg btn-block btn-primary d-flex align-items-center" type="submit">
+                              Add members
+                              <span class="fe-user-plus ml-auto"></span>
+                          </button>
+                      </div>
+                  </div>
+
+              </div>
+          </div>
+          <!-- New members -->
+
+          <!-- User's details -->
+          <div id="chat-1-user-profile" class="chat-sidebar">
+              <div class="d-flex h-100 flex-column">
+
+                  <!-- Header -->
+                  <div class="border-bottom py-4 py-lg-6">
+                      <div class="container-fluid">
+
+                          <ul class="nav justify-content-between align-items-center">
+                              <!-- Close sidebar -->
+                              <li class="nav-item list-inline-item">
+                                  <a class="nav-link text-muted px-0" href="#" data-chat-sidebar-close="">
+                                      <i class="icon-md fe-chevron-left"></i>
+                                  </a>
+                              </li>
+
+                              <!-- Title(mobile) -->
+                              <li class="text-center d-block d-lg-none">
+                                  <h6 class="mb-n2">Brian Dawson</h6>
+                                  <small class="text-muted">User Details</small>
+                              </li>
+
+                              <!-- Dropdown -->
+                              <li class="nav-item list-inline-item">
+                                  <div class="dropdown">
+                                      <a class="nav-link text-muted px-0" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                          <i class="icon-md fe-sliders"></i>
+                                      </a>
+                                      <div class="dropdown-menu">
+                                          <a class="dropdown-item d-flex align-items-center" href="#">
+                                              Mute <span class="ml-auto fe-bell"></span>
+                                          </a>
+                                          <a class="dropdown-item d-flex align-items-center" href="#">
+                                              Delete <span class="ml-auto fe-trash-2"></span>
+                                          </a>
+                                      </div>
+                                  </div>
+                              </li>
+                          </ul>
+
+                      </div>
+                  </div>
+                  <!-- Header -->
+
+                  <!-- Body -->
+                  <div class="hide-scrollbar flex-fill">
+
+                      <div class="border-bottom text-center py-9 px-10">
+                          <!-- Photo -->
+                          <div class="avatar avatar-xl mx-5 mb-5">
+                              <img class="avatar-img" src="assets/images/avatars/undraw_profile_1.svg" alt="">
+                              <div class="badge badge-sm badge-pill badge-primary badge-border-basic badge-top-right">
+                                  <span class="text-uppercase">Pro</span>
+                              </div>
+                          </div>
+                          <h5>Brian Dawson</h5>
+                          <p class="text-muted">Bootstrap is an open source toolkit for developing web with HTML, CSS, and JS.</p>
+                      </div>
+
+                      <ul class="list-group list-group-flush mb-8">
+                          <li class="list-group-item py-6">
+                              <div class="media align-items-center">
+                                  <div class="media-body">
+                                      <p class="small text-muted mb-0">Country</p>
+                                      <p>Warsaw, Poland</p>
+                                  </div>
+                                  <i class="text-muted icon-sm fe-globe"></i>
+                              </div>
+                          </li>
+
+                          <li class="list-group-item py-6">
+                              <div class="media align-items-center">
+                                  <div class="media-body">
+                                      <p class="small text-muted mb-0">Phone</p>
+                                      <p>+39 02 87 21 43 19</p>
+                                  </div>
+                                  <i class="text-muted icon-sm fe-smartphone"></i>
+                              </div>
+                          </li>
+
+                          <li class="list-group-item py-6">
+                              <div class="media align-items-center">
+                                  <div class="media-body">
+                                      <p class="small text-muted mb-0">Email</p>
+                                      <p>anna@gmail.com</p>
+                                  </div>
+                                  <i class="text-muted icon-sm fe-mail"></i>
+                              </div>
+                          </li>
+
+                          <li class="list-group-item py-6">
+                              <div class="media align-items-center">
+                                  <div class="media-body">
+                                      <p class="small text-muted mb-0">Time</p>
+                                      <p>10:03 am</p>
+                                  </div>
+                                  <i class="text-muted icon-sm fe-clock"></i>
+                              </div>
+                          </li>
+                      </ul>
+
+                      <ul class="list-group list-group-flush">
+                          <li class="list-group-item py-6">
+                              <a href="#" class="media text-muted">
+                                  <div class="media-body align-self-center">
+                                      Twitter
+                                  </div>
+                                  <i class="icon-sm fe-twitter"></i>
+                              </a>
+                          </li>
+
+                          <li class="list-group-item py-6">
+                              <a href="#" class="media text-muted">
+                                  <div class="media-body align-self-center">
+                                  Facebook
+                                  </div>
+                                  <i class="icon-sm fe-facebook"></i>
+                              </a>
+                          </li>
+
+                          <li class="list-group-item py-6">
+                              <a href="#" class="media text-muted">
+                                  <div class="media-body align-self-center">
+                                      Github
+                                  </div>
+                                  <i class="icon-sm fe-github"></i>
+                              </a>
+                          </li>
+                      </ul>
+                  </div>
+                  <!-- Body -->
+
+                  <!-- Button -->
+                  <div class="border-top py-7">
+                      <div class="container-fluid">
+                          <button class="btn btn-lg btn-block btn-primary d-flex align-items-center" type="submit">
+                              Add friend
+                              <span class="fe-user-plus ml-auto"></span>
+                          </button>
+                      </div>
+                  </div>
+
+              </div>
+          </div>
+          <!-- User's details -->
+
+      </div>
+    </div>
+
+    <!-- Default Page -->
+
+
+    <!-- Main Content -->
+
+
+</div>
+<!-- Layout -->
+
+<!-- Modal: how Chat works -->
+<div class="modal fade" id="how-works" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <div class="media flex-fill">
+                    <div class="icon-shape rounded-lg bg-primary text-white mr-5">
+                        <i class="fe-info"></i>
+                    </div>
+                    <div class="media-body align-self-center">
+                        <h5 class="modal-title">How this works</h5>
+                        <p class="small">A small explanation on how chatting works.</p>
+                    </div>
+                </div>
+
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form action="#">
+                    <div class="form-group">
+                        <label for="invite-email" class="small">1. You’ll see a snippet of the others who are in your chat room!</label>
+                        <div class="card mx-auto">
+                            <div class="card-body">
+
+                                <div class="media">
+
+
+                                    <div class="avatar mr-5">
+                                        <img class="avatar-img" src="assets/images/avatars/undraw_profile_2.svg" alt="Brian Dawson">
+                                    </div>
+
+                                    <div class="media-body overflow-hidden">
+                                        <div class="d-flex align-items-center mb-1">
+                                            <h6 class="text-truncate mb-0 mr-auto">Brian Dawson</h6>
+
+                                        </div>
+                                        <div class="text-truncate"><i class="fe-award"></i>&emsp;<span class="badge badge-info mr-auto">Kind</span>&emsp;<span class="badge badge-success mr-auto">Smart</span>&emsp;<span class="badge badge-warning mx-auto">Bold</span></div>
+                                    </div>
+                                </div>
+
+                            </div>
+
+
+
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="invite-email" class="small">2. Once the room starts you have <b>10 minutes</b> to chat before the room closes!</label>
+                        <p class="justify-content-center d-flex align-items-center display-3"><i class="fe-info">&nbsp;</i>10:00</p>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="invite-email" class="small">3. You’ll have the option to add those you enjoyed talking to at the end!</label>
+                        <div class="card">
+                            <div class="card-body">
+
+                                <div class="media d-flex align-items-center">
+
+
+                                    <div class="avatar mr-5">
+                                        <img class="avatar-img" src="assets/images/avatars/undraw_profile_2.svg" alt="Brian Dawson">
+                                    </div>
+                                    <h6 class="text-truncate mb-0 mr-auto">Brian Dawson</h6>
+
+                                    <i class="h3 align-right fe-user-plus"></i>
+                                </div>
+
+                            </div>
+
+
+
+
+                        </div>
+                    </div>
+
+
+                </form>
+            </div>
+
+            <div class="modal-footer">
+                <input class="btn btn-lg btn-primary btn-block" type="button" id="" value="Got It" data-dismiss="modal" data-toggle="modal" data-target="#start-chat">
+
+            </div>
+
+        </div>
+    </div>
+</div>
+<!-- Modal: how Chat works -->
+
+<!-- Modal: chat participants -->
+<div class="modal fade" id="start-chat" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+
+            <div class="modal-header">
+                <div class="media flex-fill">
+                    <div class="icon-shape rounded-lg bg-primary text-white mr-5">
+                        <i class="fe-users"></i>
+                    </div>
+                    <div class="media-body align-self-center">
+                        <h5 class="modal-title">Who you will be talking to</h5>
+                    </div>
+                </div>
+
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+
+            <div class="modal-body">
+              <div class="card mb-5">
+                  <div class="card-body">
+
+                      <div class="media">
+
+
+                          <div class="avatar mr-5">
+                              <img class="avatar-img" src="assets/images/avatars/undraw_profile_2.svg" alt="Brian Dawson">
+                          </div>
+
+                          <div class="media-body overflow-hidden">
+                              <div class="d-flex align-items-center mb-1">
+                                  <h6 class="text-truncate mb-0 mr-auto">Brian Dawson</h6>
+
+                              </div>
+                              <div class="text-truncate"><i class="fe-award"></i>&emsp;<span class="badge badge-info mr-auto">Kind</span>&emsp;<span class="badge badge-success mr-auto">Smart</span>&emsp;<span class="badge badge-warning mx-auto">Bold</span></div>
+                          </div>
+                      </div>
+
+                  </div>
+
+
+
+              </div>
+              <div class="card mb-5">
+                  <div class="card-body">
+
+                      <div class="media">
+
+
+                          <div class="avatar mr-5">
+                              <img class="avatar-img" src="assets/images/avatars/undraw_profile_2.svg" alt="Brian Dawson">
+                          </div>
+
+                          <div class="media-body overflow-hidden">
+                              <div class="d-flex align-items-center mb-1">
+                                  <h6 class="text-truncate mb-0 mr-auto">Brian Dawson</h6>
+
+                              </div>
+                              <div class="text-truncate"><i class="fe-award"></i>&emsp;<span class="badge badge-info mr-auto">Kind</span>&emsp;<span class="badge badge-success mr-auto">Smart</span>&emsp;<span class="badge badge-warning mx-auto">Bold</span></div>
+                          </div>
+                      </div>
+
+                  </div>
+
+
+
+              </div>
+              <div class="card mb-5">
+                  <div class="card-body">
+
+                      <div class="media">
+
+
+                          <div class="avatar mr-5">
+                              <img class="avatar-img" src="assets/images/avatars/undraw_profile_2.svg" alt="Brian Dawson">
+                          </div>
+
+                          <div class="media-body overflow-hidden">
+                              <div class="d-flex align-items-center mb-1">
+                                  <h6 class="text-truncate mb-0 mr-auto">Brian Dawson</h6>
+
+                              </div>
+                              <div class="text-truncate"><i class="fe-award"></i>&emsp;<span class="badge badge-info mr-auto">Kind</span>&emsp;<span class="badge badge-success mr-auto">Smart</span>&emsp;<span class="badge badge-warning mx-auto">Bold</span></div>
+                          </div>
+                      </div>
+
+                  </div>
+
+
+
+              </div>
+            </div>
+
+            <div class="modal-footer">
+                <button type="button" class="btn btn-lg btn-block btn-primary d-flex align-items-center" id="room-submit">
+                    Start Chat
+                    <i class="fe-user-plus ml-auto"></i>
+                </button>
+            </div>
+
+        </div>
+    </div>
+</div>
+<!-- Modal: Start Chat -->
+
+<!-- Modal: Invite friends -->
+<div class="modal fade" id="invite-friends" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+
+            <div class="modal-header">
+                <div class="media flex-fill">
+                    <div class="icon-shape rounded-lg bg-primary text-white mr-5">
+                        <i class="fe-users"></i>
+                    </div>
+                    <div class="media-body align-self-center">
+                        <h5 class="modal-title">Invite friends</h5>
+                        <p class="small">Invite colleagues, clients and friends.</p>
+                    </div>
+                </div>
+
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+
+            <div class="modal-body">
+                <form action="#">
+                    <div class="form-group">
+                        <label for="invite-email" class="small">Email</label>
+                        <input type="text" class="form-control form-control-lg" id="invite-email">
+                    </div>
+
+                    <div class="form-group mb-0">
+                        <label for="invite-message" class="small">Invitation message</label>
+                        <textarea class="form-control form-control-lg" id="invite-message" data-autosize="true"></textarea>
+                    </div>
+                </form>
+            </div>
+
+            <div class="modal-footer">
+                <button type="button" class="btn btn-lg btn-block btn-primary d-flex align-items-center">
+                    Invite friend
+                    <i class="fe-user-plus ml-auto"></i>
+                </button>
+            </div>
+
+        </div>
+    </div>
+</div>
+<!-- Modal: Invite friends -->
 {% endblock %}
