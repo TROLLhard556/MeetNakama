@@ -20,25 +20,18 @@
                 <p class="text-center mb-6">Welcome to the official Chat web-client.</p>
 
                 <!-- Form -->
-                <form class="mb-6">
-                    <!-- Email -->
-                    <div class="form-group">
-                        <label for="email" class="sr-only">Email Address</label>
-                        <input type="email" class="form-control form-control-lg" id="email" placeholder="Enter your email">
-                    </div>
+                {% load crispy_forms_tags %}
+                <form class="mb-6" method="post">
+                  {% csrf_token %}
+                  {{ form|crispy }}
 
-                    <!-- Password -->
-                    <div class="form-group">
-                        <label for="password" class="sr-only">Password</label>
-                        <input type="password" class="form-control form-control-lg" id="password" placeholder="Enter your password">
-                    </div>
 
                     <div class="form-group d-flex justify-content-between">
                         <div class="custom-control custom-checkbox">
                             <input type="checkbox" class="custom-control-input" checked="" id="checkbox-remember">
                             <label class="custom-control-label" for="checkbox-remember">Remember me</label>
                         </div>
-                        <a href="{% url 'PasswordReset' %}">Reset password</a>
+                        <a href="{% url 'password_reset' %}">Reset password</a>
                     </div>
 
                     <!-- Submit -->

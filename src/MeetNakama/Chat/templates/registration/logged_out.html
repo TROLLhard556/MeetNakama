@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block title %}
+<title>MeetNakama | Logout</title>
+{% endblock %}
+
+{% block content %}
+<div class="layout">
+
+    <div class="container d-flex flex-column">
+        <div class="row align-items-center justify-content-center no-gutters min-vh-100">
+
+            <div class="col-12 col-md-5 col-lg-4 py-8 py-md-11">
+
+                <!-- Heading -->
+                <h1 class="font-bold text-center">You Logged Out</h1>
+
+                <!-- Text -->
+                <p class="text-center">
+                    Want to sign in? <a href="{% url 'login' %}">Sign in</a>.
+                </p>
+
+            </div>
+        </div> <!-- / .row -->
+    </div>
+
+</div><!-- .layout -->
+{% endblock %}
