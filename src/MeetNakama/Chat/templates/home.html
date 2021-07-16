@@ -414,15 +414,16 @@
                           <div class="form-row">
                               <div class="col">
                                   <!-- Button -->
-                                  <button onclick="ShowSettings()" id="settingsButton" class="btn btn-lg btn-block btn-basic d-flex align-items-center" type="button" name="settingsButton">
+
+                                  <a href="{% url 'Settings' %}" class="btn btn-lg btn-block btn-basic d-flex align-items-center">
                                     Settings
                                     <span class="fe-settings ml-auto"></span>
-                                  </button>
+                                  </a>
                               </div>
 
                               <div class="col">
                                   <!-- Button -->
-                                  <a href="/logout/" class="btn btn-lg btn-block btn-basic d-flex align-items-center">
+                                  <a href="{% url 'logout' %}" class="btn btn-lg btn-block btn-basic d-flex align-items-center">
                                     Logout
                                     <span class="fe-settings ml-auto"></span>
                                   </a>
@@ -1141,7 +1142,7 @@
           </div>
           <!-- Chat: body -->
           <!-- Message: dropdown -->
-          <!--
+
           <div id="message-dropdown" class="dropdown">
               <a class="text-muted opacity-60 ml-3" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                   <i class="fe-more-vertical"></i>
@@ -1159,7 +1160,7 @@
                   </a>
               </div>
           </div>
-         -->
+
 
           <!-- Chat Details -->
           <div id="chat-1-info" class="chat-sidebar">
@@ -1859,7 +1860,7 @@
                 </button>
             </div>
 
-            <div class="modal-body">
+            <div class="modal-body">/
               <div class="card mb-5">
                   <div class="card-body">
 

@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from django.contrib.auth.decorators import login_required
 from Users.forms import CustomUserCreationForm
 
 # Create your views here.
@@ -13,5 +14,16 @@ def Signup(request):
         form = CustomUserCreationForm()
     return render(request, 'signup.html', {"form":form})
 
+@login_required
 def Home(request):
     return render(request, 'home.html')
+
+@login_required
+def Settings(request):
+    if request.method == "POST":
+        pass
+    return render(request, 'settings.html')
+
+@login_required
+def Chat(request):
+    return render(request, 'chat.html')
