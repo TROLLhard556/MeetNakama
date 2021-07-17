@@ -14,7 +14,7 @@
         <p class="text-center mb-6">Welcome to the official Chat web-client.</p>
         {% load crispy_forms_tags %}
         <!-- Form -->
-        <form class="mb-6">
+        <form class="mb-6" method="post">
           {% csrf_token %}
           <!-- Name -->
           <div class="form-group">

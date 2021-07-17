@@ -132,7 +132,8 @@ STATIC_URL = '/static/'
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 CRISPY_TEMPLATE_PACK = "bootstrap4"
 
-LOGIN_REDIRECT_URL = '/chat/home/'
+LOGIN_URL = '/chat/login/'
+LOGIN_REDIRECT_URL = '/chat/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
