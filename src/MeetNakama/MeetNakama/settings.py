@@ -31,16 +31,19 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
-    'Chat',
-    'django.contrib.admin',
-    'django.contrib.auth',
+
+
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'crispy_forms',
+    'channels',
+    'Chat',
     'Users',
     'ComingSoon',
+    'django.contrib.admin',
+    'django.contrib.auth',
 
 ]
 
@@ -73,6 +76,8 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'MeetNakama.wsgi.application'
+ASGI_APPLICATION = 'MeetNakama.asgi.application'
+
 
 
 # Database
