@@ -77,7 +77,14 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'MeetNakama.wsgi.application'
 ASGI_APPLICATION = 'MeetNakama.asgi.application'
-
+CHANNEL_LAYERS = {
+    'default': {
+        'BACKEND': 'channels_redis.core.RedisChannelLayer',
+        'CONFIG': {
+            "hosts": [('127.0.0.1', 6379)]
+        },
+    },
+}
 
 
 # Database

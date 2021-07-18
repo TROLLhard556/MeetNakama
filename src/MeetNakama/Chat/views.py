@@ -1,5 +1,7 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth.decorators import login_required
+from django.utils.safestring import mark_safe
+import json
 from Users.forms import CustomUserCreationForm
 
 
@@ -17,7 +19,7 @@ def Signup(request):
 
 @login_required
 def Home(request):
-    return render(request, 'home.html')
+    return render(request, 'home.html', {'name': request.user.first_name})
 
 @login_required
 def Settings(request):
@@ -26,5 +28,8 @@ def Settings(request):
     return render(request, 'settings.html')
 
 @login_required
-def Chat(request):
-    return render(request, 'chat.html')
+def Chat(request, chatID):
+    return render(request, 'chat.html', {
+        'chatID': mark_safe(json.dumps(chatID)),
+        'name': mark_safe(json.dumps(request.user.first_name))
+    })

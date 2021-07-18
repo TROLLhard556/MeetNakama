@@ -1,11 +1,9 @@
-import $ from 'jquery';
-import jQuery from 'jquery';
 
 (function($) {
 
     "use strict";
 
-    Dropzone.autoDiscover = false;
+    
 
     $(document).ready(function() {
 
@@ -149,29 +147,6 @@ import jQuery from 'jquery';
             }, false );
         });
 
-        //
-        // Dropzone
-        //
-
-        if ( document.querySelector('#dropzone-template-js') ) {
-            var template = document.querySelector('#dropzone-template-js');
-            var template_element = document.querySelector('#dropzone-template-js');
-            template_element.parentNode.removeChild(template_element);
-        }
-
-        [].forEach.call(document.querySelectorAll('.dropzone-form-js'), function (el) {
-
-            var clickable         = el.querySelector('.dropzone-button-js').id;
-            var url               = el.getAttribute('data-dz-url');
-            var previewsContainer = el.querySelector('.dropzone-previews-js');
-
-            var myDropzone = new Dropzone(el, {
-                url: url,
-                previewTemplate: template.innerHTML,
-                previewsContainer: previewsContainer,
-                clickable: '#' + clickable
-            });
-        });
 
         //
         // Mobile screen height minus toolbar height
