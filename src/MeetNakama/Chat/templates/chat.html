@@ -593,9 +593,9 @@
             <script src="{% static 'js/plugins/reconnecting-websocket.js' %}"></script>
             <script>
               var chatID = {{ chatID }};
-              console.log(chatID)
               var username = {{ name }};
-
+              var email = {{ email }}
+              console.log(email)
 
 
               var chatSocket = new ReconnectingWebSocket(
@@ -632,7 +632,7 @@
               document.querySelector('#chat-send').onclick = function(e) {
                 const messageInputDom = document.querySelector('#chat-input');
                 const message = messageInputDom.value;
-                chatSocket.send(JSON.stringify({'command': 'new_message', 'message': message, 'from': username}));
+                chatSocket.send(JSON.stringify({'command': 'new_message', 'message': message, 'from': email}));
                 messageInputDom.value = '';
               };
 
@@ -686,7 +686,8 @@
 
 
 
-                var author = data['author'];
+                var contact = data['contact'];
+                console.log(contact)
 
                 var msgDivTag = document.createElement('div');
                 var flexDiv = document.createElement('div');
@@ -730,7 +731,7 @@
                 //console.log(msgDrop);
 
 
-                if (author === username) {
+                if (contact === username) {
                   msgDivTag.className = 'message message-right';
                   flexDiv.className = 'd-flex align-items-center justify-content-end';
                   msgContentDiv.className = 'message-content bg-primary text-white';

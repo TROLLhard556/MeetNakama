@@ -31,5 +31,6 @@ def Settings(request):
 def Chat(request, chatID):
     return render(request, 'chat.html', {
         'chatID': mark_safe(json.dumps(chatID)),
-        'name': mark_safe(json.dumps(request.user.first_name))
+        'name': mark_safe(json.dumps(request.user.first_name)),
+        'email': mark_safe(json.dumps(request.user.email))
     })
