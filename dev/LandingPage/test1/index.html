@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Welcome | MeetNakama</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Bootstrap CSS-->
+    <link rel="stylesheet" href="vendor/bootstrap/css/bootstrap.min.css">
+    <!-- Google fonts-->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito:400,600,800&amp;display=swap">
+    <!-- Device Mockup-->
+    <link rel="stylesheet" href="css/device-mockups.css">
+    <!-- theme stylesheet-->
+    <link rel="stylesheet" href="css/style.default.css" id="theme-stylesheet">
+    <!-- Favicon-->
+    <link rel="shortcut icon" href="img/nakamaLogo.png">
+
+  </head>
+  <body>
+    <!-- navbar-->
+    <header class="header">
+      <nav class="navbar navbar-expand-lg fixed-top">
+        <a class="navbar-brand" href="index.html"><img src="img/nakamaLongLogo.svg" alt="" width="250"></a>
+      </nav>
+    </header>
+    <!-- Hero Section-->
+    <section class="hero bg-top" id="hero" style="background: url(img/banner-4.png) no-repeat; background-size: 100% 80%">
+      <div class="container">
+        <div class="row py-5">
+          <div class="col-lg-5 py-5">
+            <h1 class="font-weight-bold">A playful and easy way to meet people in Durham, NC!</h1>
+            <p class="my-4 text-muted">As things are starting to open back up, we're hoping to create a great space to meet people with mutual interests in a way that prioritizes how well you connect.</p>
+
+            <form class="form-inline" method="post">
+              <p class="my-4 text-muted" style="font-size: 0.8rem;">We are almost ready for beta launch! Be the first to know</p>
+              <div class="form-group mb-0">
+                <label for="email" class="sr-only">Email</label>
+                <input type="text" class="form-control form-control-lg" id="email" placeholder="Email">
+                <button type="submit" class="btn btn-primary btn-lg  mx-sm-3 px-2">Subscribe</button>
+              </div>
+            </form>
+          </div>
+          <div class="col-lg-6 ml-auto">
+            <div class="device-wrapper mx-auto">
+              <div class="device shadow" data-device="iPhoneX" data-orientation="portrait" data-color="black">
+                <div class="screen"><img class="img-fluid" src="img/mobile.png" alt=""></div>
+              </div>
+            </div>
+          </div>
+          <div class="container row">
+            <div class="col-lg-5">
+              <ul class="list-inline mb-0">
+                <li class="list-inline-item"><a class="social-link" target="_blank" href="https://www.facebook.com/MeetNakama-103770431948391"><i class="fab fa-facebook-f"></i></a></li>
+                <li class="list-inline-item"><a class="social-link" target="_blank" href="https://twitter.com/MeetNakama"><i class="fab fa-twitter"></i></a></li>
+                <li class="list-inline-item"><a class="social-link" target="_blank" href="https://www.instagram.com/meetnakama/"><i class="fab fa-instagram"></i></a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="copyrights py-4">
+          <p class="mb-0 text-muted text-sm">&emsp; &copy; 2021, MeetNakama</p>
+      </div>
+    </section>
+
+    <!-- JavaScript files-->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="js/front.js"></script>
+
+    <!-- FontAwesome CSS - loading as last, so it doesn't block rendering-->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+  </body>
+</html>
