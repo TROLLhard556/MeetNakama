@@ -1,0 +1,83 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Welcome | MeetNakama</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Bootstrap CSS-->
+  <link rel="stylesheet" href="{% static 'vendor/bootstrap/css/bootstrap.min.css' %}">
+  <!-- Google fonts-->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito:400,600,800&amp;display=swap">
+  <!-- Device Mockup-->
+  <link rel="stylesheet" href="{% static 'css/device-mockups.css' %}">
+  <!-- theme stylesheet-->
+  <link rel="stylesheet" href="{% static 'css/style.default.css' %}" id="theme-stylesheet">
+  <!-- Favicon-->
+  <link rel="shortcut icon" href="{% static 'img/nakamalogoicon.ico' %}">
+
+</head>
+
+<body>
+  <!-- navbar-->
+  <header class="header">
+    <nav class="navbar navbar-expand-lg fixed-top">
+      <a class="navbar-brand" href="{% url 'landingPage' %}"><img src="{% static 'img/nakamaLongLogo.svg' %}" alt="" width="200"></a>
+    </nav>
+  </header>
+  <!-- Hero Section-->
+  <section class="hero bg-top" id="hero" style="background: url('/static/img/banner-4.png') no-repeat; background-size: 100% 100%">
+    <div class="container">
+      <div class="row pt-5 pb-0">
+        <div class="col-lg-5 py-5">
+          <h1 class="font-weight-bold">A playful and easy way to meet people in Durham, NC!</h1>
+          <p class="my-4 text-muted">As things are starting to open back up, we're hoping to create a great space to meet people with mutual interests in a way that prioritizes how well you connect.</p>
+          <form class="form-inline" method="post">
+            {% csrf_token %}
+            <p class="my-4 text-muted" style="font-size: 0.8rem;">We are almost ready for beta launch! Be the first to know</p>
+            <div class="form-group row mx-0 mb-0">
+              <label for="email" class="sr-only">Email</label>
+              <input type="text" class="form-control col-xs-1" id="email" style="width: 65% !important" placeholder="Email">
+              <button type="submit" class="btn btn-primary col-xs-1 px-3">Subscribe</button>
+            </div>
+          </form>
+          {% if messages %}
+          {% for message in messages %}
+          <div class="my-5 alert alert-success">
+            <h5 class="m-0">
+              {{ message }}
+            </h5>
+          </div>
+          {% endfor %}
+          {% endif %}
+        </div>
+        <div class="col-lg-6 ml-auto">
+          <div class="device-wrapper mx-auto">
+            <div class="device shadow" data-device="iPhoneX" data-orientation="portrait" data-color="black">
+              <div class="screen"><img class="img-fluid" src="{% static 'img/mobile.png' %}" alt=""></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <footer>
+    <ul class="list-inline pt-5 px-4">
+      <li class="list-inline-item"><a class="social-link" target="_blank" href="https://www.facebook.com/MeetNakama-103770431948391"><i class="fab fa-facebook-f"></i></a></li>
+      <li class="list-inline-item"><a class="social-link" target="_blank" href="https://twitter.com/MeetNakama"><i class="fab fa-twitter"></i></a></li>
+      <li class="list-inline-item"><a class="social-link" target="_blank" href="https://www.instagram.com/meetnakama/"><i class="fab fa-instagram"></i></a></li>
+    </ul>
+    <div class="copyrights pb-4 px-4">
+      <p class="mb-0 text-muted text-sm">&copy; 2021, MeetNakama</p>
+    </div>
+  </footer>
+  <!-- JavaScript files-->
+  <script src="{% static 'vendor/jquery/jquery.min.js' %}"></script>
+  <script src="{% static 'vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+
+  <!-- FontAwesome CSS - loading as last, so it doesn't block rendering-->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+</body>
+
+</html>
