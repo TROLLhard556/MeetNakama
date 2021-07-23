@@ -1,0 +1,23 @@
+API Key: 5568d25b7586833fb1788cf9a4ce3b2b-us6
+Email list ID: 84595b88f7
+
+django secret key: 2=2j*o=h#7+ziczlha1ykmy_d9ly18)o_7!x^r7y1%ex$hhwkb
+
+set env variables in /etc/environment
+Name=value
+
+home/chris/webapp/
+            |- venv/
+            |- AWESOME_PROJECT/
+                |- awesome/
+                |- AWESOME/
+                   |- wsgi.py
+                   |- settings.py
+
+MAILCHIMP_API_KEY = ""
+MAILCHIMP_DATA_CENTER = ""
+MAILCHIMP_EMAIL_LIST_ID = ""
+
+read from env variables 
+import os
+os.environ['SECRET_KEY']
